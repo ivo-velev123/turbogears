@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <header>
+            <py:if test="person">
+                <h1>${h.text.truncate(person, 5)}'s HTML Website practice</h1>
+            </py:if><py:else>
+                <h1 class="middle">HTML Website practice</h1>
+            </py:else>
+        </header>
+        <article>
+            <h3 class="left">Here is a list of things you can do with HTML5:</h3>
+            <ul class="left">
+                <li><a href="html5Elements.html">These are a few elements.</a></li>
+                <li><a href="video.html">This is a video embedded into html</a></li>
+                <li><a href="audio.html">This is audio embedded into html</a></li>
+            </ul>
+        </article>
+    </body>
+</html>

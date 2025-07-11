@@ -1,0 +1,17 @@
+header{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+
+.middle{
+    grid-column-start: 2;
+}
+
+.left{
+    grid-column-start: 1;
+}
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="elementStyle.css">
+        <title>Slider</title>
+    </head>
+    <body id="body">
+        <article class="middle">
+            <div class="border">
+                <h1 id="text">This is a slider</h1>
+                <input type="range" name="slider" id="slider"><label for="slider">Size</label></input>
+                <h3>You can use it to control the size of the text above it.</h3>
+            </div>
+            
+            <div class="border">
+                <h1>This is a colour picker</h1>
+                <h2>You can use this to pick the colour for the background</h2>
+                <input type="color" name="picker" id="picker"></input>
+            </div>
+            
+            <div class="border">
+                <h1>This is a button</h1>
+                <h2>You can use this button to apply the colour above to the background</h2>
+                <input id="btn" type="button" value="button">
+            </div>
+        </article>
+    </body>
+    <script>
+        document.getElementById("btn").addEventListener("click", ()=>{
+            document.getElementById("body").style.background = document.getElementById("picker").value;
+        })
+
+        document.getElementById("slider").addEventListener("input", ()=>{
+            document.getElementById("text").style.fontSizeAdjust = document.getElementById("slider").value / 100;
+            console.log(document.getElementById("slider").value);
+        }) 
+    </script>
+</html>
