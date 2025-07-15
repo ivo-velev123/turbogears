@@ -7,6 +7,7 @@ kajiki==1.0.2
 legacy-cgi==2.6.3
 linetable==0.0.3
 MarkupSafe==3.0.2
+nose==1.3.7
 pipreqs==0.4.13
 repoze.lru==0.7
 requests==2.32.4
