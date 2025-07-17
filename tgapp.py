@@ -33,4 +33,5 @@ application = config.make_wsgi_app()
 
 print("Serving on port 8080...")
 httpd = make_server('', 8080, application)
+print("serving on port 8080")
 httpd.serve_forever()
