@@ -26,3 +26,25 @@ jobs:
       - name: Run pytest
         run: |
           pytest test_tgapp.py -vv
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: success()
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: SSH and deploy on EC2
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST}}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/turbogears || git clone https://github.com/ivo-velev123/turbogears
+            cd ~/turbogears
+            git pull
+            docker build -t turbogears-app .
+            docker stop turbogears-app || true
+            docker run -p 8080:8080 turbogears-app
