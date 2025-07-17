@@ -7,3 +7,4 @@ lib
 .dockerignore
 Dockerfile
 *.cfg
+test_tgapp.py
