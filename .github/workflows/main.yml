@@ -47,4 +47,5 @@ jobs:
             git pull
             docker build -t turbogears-app:latest .
             docker stop turbogears-app || true
+            docker rm turbogears-app
             docker run -d --name turbogears-app -p 8080:8080 turbogears-app:latest
